@@ -1,3 +1,4 @@
+// Questions and Answers
 var questions = [
     {
         title: "Commonly used Data types DO NOT use:",
@@ -53,9 +54,10 @@ timer.addEventListener("click", function () {
 
 })
 
+// Renders questions to the screen once start button is clicked
 function render(questionList) {
-    questionsDiv.innerHTML = [""];
-    ulCreate.innerHTML = [""];
+    questionsDiv.innerHTML = "";
+    ulCreate.innerHTML = "";
     for (var i = 0; i < questions.length; i++) {
         var userQuestion = questions[questionList].title;
         var userChoices = questions[questionList].choices;
@@ -69,27 +71,59 @@ function render(questionList) {
         listItem.addEventListener("click", compare);
     });
 }
+// ___________________
 function compare(event) {
     var element = event.target;
-    if (element.matches("li")) {
+    if(element.matches("li")) {
         var createDiv = document.createElement("div");
         createDiv.setAttribute("id", "createDiv");
         if (element.textContent == questions[questionList].answer) {
             score++;
             createDiv.textContent = "Correct!";
-
         } else {
             secondsLeft = secondsLeft - penalty;
             createDiv.textContent = "Wrong!";
         }
     }
+    questionList++;
+    if (questionList >= questionList.length) {
+        allDone();
+        createDiv.textContent = "End of Quiz" + "" + "you got " + score + "/" + questions.length + " correct!";
+    } else {
+        render(questionList);
+    }
+    questionsDiv.appendChild(createDiv);
+}
+// __________________
+function allDone() {
+    questionsDiv.innerHTML = "";
+    currentTime.innerHTML = "";
+
+    var createH1 = document.createElement("h1");
+    createH1.textContent = "Quiz Completed";
+    createH1.setAttribute = ("id", "createH1");
+
+    questionsDiv.appendChild(createH1);
+
+    if (secondsLeft <= 0) {
+        var timeRemaining = secondsLeft;
+        var createP = document.createElement("p");
+        clearInterval(holdInterval);
+        createP.textContent = "Your final score is: " + timeRemaining;
+        questionsDiv.appendChild(createP);
+    }
 
 }
-questionList++;
-if (questionList >= questions.length) {
-    allDone();
-    createDiv.textContent = "End of Quiz" + " " + "you got " + score + "/" + questions.length + " Correct!";
-} else {
-    render(questionList);
-}
-questionsDiv.appendChild(createDiv);
+
+var createLabel = document.createElement("label");
+createLabel.setAttribute("id", "createLabel");
+createLabel.textContent = "Enter Your Initials: ";
+
+questionsDiv.appendChild(createLabel);
+
+var createInput = document.createElement("input");
+createInput.setAttribute("id", "createInput","type", "text");
+createInput.textContent = "";
+questionsDiv.appendChild(createInput);
+
+
