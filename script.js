@@ -52,7 +52,7 @@ timer.addEventListener("click", function () {
     render(questionList);
 
 
-})
+});
 
 // Renders questions to the screen once start button is clicked
 function render(questionList) {
@@ -74,7 +74,7 @@ function render(questionList) {
 // ___________________
 function compare(event) {
     var element = event.target;
-    if(element.matches("li")) {
+    if (element.matches("li")) {
         var createDiv = document.createElement("div");
         createDiv.setAttribute("id", "createDiv");
         if (element.textContent == questions[questionList].answer) {
@@ -86,14 +86,16 @@ function compare(event) {
         }
     }
     questionList++;
-    if (questionList >= questionList.length) {
+
+    if (questionList >= questions.length) {
+        createDiv.textContent = "End of Quiz" + "" + " you got " + score + "/" + questions.length + " correct!";
         allDone();
-        createDiv.textContent = "End of Quiz" + "" + "you got " + score + "/" + questions.length + " correct!";
     } else {
         render(questionList);
     }
     questionsDiv.appendChild(createDiv);
 }
+
 // __________________
 function allDone() {
     questionsDiv.innerHTML = "";
@@ -109,21 +111,64 @@ function allDone() {
         var timeRemaining = secondsLeft;
         var createP = document.createElement("p");
         clearInterval(holdInterval);
-        createP.textContent = "Your final score is: " + timeRemaining;
+        createP.textContent = "Your final score is: " + (timeRemaining);
         questionsDiv.appendChild(createP);
+
     }
 
+
+
+
+    var createLabel = document.createElement("label");
+    createLabel.setAttribute("id", "createLabel");
+    createLabel.textContent = "Enter Your Initials: ";
+
+    questionsDiv.appendChild(createLabel);
+
+    var createInput = document.createElement("input");
+    createInput.setAttribute("id", "createInput", "type", "text");
+    createInput.textContent = "";
+    questionsDiv.appendChild(createInput);
+
+    var createSubmit = document.createElement("submit");
+    createSubmit.setAttribute("id", "createSubmit");
+    createSubmit.setAttribute("type", "submit");
+    createSubmit.textContent = "Submit";
+    questionsDiv.appendChild(createSubmit);
+
+    createSubmit.addEventListener("click", function () {
+        var initials = createInput.value;
+        if (initials === null) {
+            alert("No value entered!");
+        } else {
+            var finalScore = {
+                initials: initials,
+                score: timeRemaining,
+            };
+            console.log(finalScore);
+            var allScores = localStorage.getItem("allScores");
+            if (allScores === null) {
+                allScores = [];
+            } else {
+                allScores = JSON.parse(allScores);
+            }
+            allScores.push(finalScore);
+            var newScore = JSON.stringify(allScores);
+            localStorage.setItem("allScores", newScore);
+            console.log(allScores);
+
+        }
+    });
 }
 
-var createLabel = document.createElement("label");
-createLabel.setAttribute("id", "createLabel");
-createLabel.textContent = "Enter Your Initials: ";
-
-questionsDiv.appendChild(createLabel);
-
-var createInput = document.createElement("input");
-createInput.setAttribute("id", "createInput","type", "text");
-createInput.textContent = "";
-questionsDiv.appendChild(createInput);
 
 
+
+
+
+/**Last steps - 
+ * .create second HTML page to hold highscores
+ * .create list with h1 Highscores
+ * .show highscores from quiz game
+ * 
+ */
