@@ -46,6 +46,11 @@ timer.addEventListener("click", function () {
             if (secondsLeft <= 0) {
                 clearInterval(holdInterval);
                 currentTime.textContent = "Times up!";
+                if (questionList <= questionList.length) {
+                    clearInterval(holdInterval)
+                    allDone();
+                }
+                
             }
         }, 1000);
     }
@@ -53,6 +58,14 @@ timer.addEventListener("click", function () {
 
 
 });
+
+// function reset (resetButton) {
+//     location.reload();
+//     var resetButton = document.querySelector("#reset");
+//     resetButton.addEventListener("click", reset);
+//     location.reload();
+
+// }
 
 // Renders questions to the screen once start button is clicked
 function render(questionList) {
@@ -86,7 +99,7 @@ function compare(event) {
         }
     }
     questionList++;
-
+   
     if (questionList >= questions.length) {
         createDiv.textContent = "End of Quiz" + "" + " you got " + score + "/" + questions.length + " correct!";
         allDone();
@@ -107,14 +120,14 @@ function allDone() {
 
     questionsDiv.appendChild(createH1);
 
-    if (secondsLeft <= 0) {
+    if (secondsLeft >= 0) {
         var timeRemaining = secondsLeft;
         var createP = document.createElement("p");
         clearInterval(holdInterval);
         createP.textContent = "Your final score is: " + (timeRemaining);
         questionsDiv.appendChild(createP);
 
-    }
+    };
 
 
 
@@ -137,7 +150,32 @@ function allDone() {
     questionsDiv.appendChild(createSubmit);
 
     createSubmit.addEventListener("click", function () {
+    var initials = createInput.value;
+    if (initials === null) {
+        alert("No value entered!");
+    } else {
+         var finalScore = {
+            initials: initials,
+            score: timeRemaining,
+    };
+    console.log(finalScore);
+    var allScores = localStorage.getItem("allScores");
+    if (allScores === null) {
+        allScores = [];
+        } else {
+            allScores = JSON.parse(allScores);
+        }
+            allScores.push(finalScore);
+            var newScore = JSON.stringify(allScores);
+            localStorage.setItem("allScores", newScore);
+    }
+});
+
+
+
+    createSubmit.addEventListener("click", function () {
         var initials = createInput.value;
+
         if (initials === null) {
             alert("No value entered!");
         } else {

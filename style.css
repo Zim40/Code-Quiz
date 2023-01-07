@@ -1,4 +1,49 @@
 body {
+    max-width: 960px;
+    margin: auto;
     font-size: 30px;
     align-content: center;
+    color: black;
+    box-sizing: border-box;
+    background-color: grey;
+    font-family:  Tahoma, sans-serif;
+}
+#Title {
+    text-align: center;
+
+}
+/* Questions */
+#questionsDiv {
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+    border-radius: 8px;
+    padding: 15px;
+}
+#createSubmit {
+    border-style: solid;
+    border-radius: 10px;
+    font-size: 17px;
+    border-width: 2px;
+    padding: 5px;
+    margin-left: 20px;
+    padding-top: 2px;
+}
+#createSubmit:hover {
+    background-color:aquamarine;
+}
+/* Choices */
+li {
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    padding: 3px;
+    margin: 12px;
+    border-radius: 8px;
+    background: white;
+    list-style: none;
+    text-align: center;
+}
+li:hover {
+    background-color:aquamarine;
 }
