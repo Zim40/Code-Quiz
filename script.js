@@ -126,10 +126,13 @@ function allDone() {
         clearInterval(holdInterval);
         createP.textContent = "Your final score is: " + (timeRemaining);
         questionsDiv.appendChild(createP);
+        if (score === 0) {
+            createP.textContent = "You failed to answer any questions correctly";
+        }
 
     };
 
-
+    
 
 
     var createLabel = document.createElement("label");
@@ -207,6 +210,4 @@ function allDone() {
 /**Last steps - 
  * .create second HTML page to hold highscores
  * .create list with h1 Highscores
- * .show highscores from quiz game
- * 
- */
+ * .show highscores from quiz game*/

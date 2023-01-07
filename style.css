@@ -12,13 +12,34 @@ body {
     text-align: center;
 
 }
+p {
+    font-size: 25px;
+
+}
+h1#Coding-quiz {
+    max-width: 1080px;
+    background: aquamarine;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgb(0 0 0 / 50%), 10px 10px 15px rgb(0 0 0 / 50%), -1px -1px 30px rgb(0 0 0 / 20%);
+    padding: 21px;
+}
 /* Questions */
 #questionsDiv {
     border-style: solid;
     border-width: 3px;
     border-color: black;
-    border-radius: 8px;
     padding: 15px;
+    text-align:center;
+    background: aquamarine;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgb(0 0 0 / 50%), 10px 10px 15px rgb(0 0 0 / 50%), -1px -1px 30px rgb(0 0 0 / 20%);
+    
+}
+#timeCount {
+    font-size: 45px;
+    margin: 20px;
+    text-align: right;
+    font-style: oblique;
 }
 #createSubmit {
     border-style: solid;
@@ -30,7 +51,7 @@ body {
     padding-top: 2px;
 }
 #createSubmit:hover {
-    background-color:aquamarine;
+    background-color:grey;
 }
 /* Choices */
 li {
@@ -45,5 +66,5 @@ li {
     text-align: center;
 }
 li:hover {
-    background-color:aquamarine;
+    background-color:grey;
 }
