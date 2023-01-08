@@ -14,7 +14,11 @@ body {
 }
 p {
     font-size: 25px;
+    text-align: center;
 
+}
+h2 {
+    font-size:30px;
 }
 h1#Coding-quiz {
     max-width: 1080px;
@@ -23,6 +27,23 @@ h1#Coding-quiz {
     box-shadow: 2px 2px 5px rgb(0 0 0 / 50%), 10px 10px 15px rgb(0 0 0 / 50%), -1px -1px 30px rgb(0 0 0 / 20%);
     padding: 21px;
 }
+div#startQuiz {
+    text-align: center;
+}
+button:hover {
+    background: aquamarine;
+    cursor: pointer;
+}
+button {
+    width: 200px;
+    height: 100px;
+    border: 2px;
+    border: solid black;
+    border-radius: 8px;
+    font-size: 22px;
+    background-color: grey;
+}
+
 /* Questions */
 #questionsDiv {
     border-style: solid;
@@ -33,7 +54,7 @@ h1#Coding-quiz {
     background: aquamarine;
     border-radius: 10px;
     box-shadow: 2px 2px 5px rgb(0 0 0 / 50%), 10px 10px 15px rgb(0 0 0 / 50%), -1px -1px 30px rgb(0 0 0 / 20%);
-    
+    margin: 10px;
 }
 #timeCount {
     font-size: 45px;
@@ -52,6 +73,7 @@ h1#Coding-quiz {
 }
 #createSubmit:hover {
     background-color:grey;
+    cursor: pointer;
 }
 /* Choices */
 li {
@@ -64,7 +86,9 @@ li {
     background: white;
     list-style: none;
     text-align: center;
+    cursor: pointer;
 }
 li:hover {
     background-color:grey;
+    
 }

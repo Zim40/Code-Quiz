@@ -59,13 +59,12 @@ timer.addEventListener("click", function () {
 
 });
 
-// function reset (resetButton) {
-//     location.reload();
-//     var resetButton = document.querySelector("#reset");
-//     resetButton.addEventListener("click", reset);
-//     location.reload();
+function reset (resetButton) {
+    var resetButton = document.querySelector("#reset");
+    resetButton.addEventListener("click", reset);
+    location.reload();
 
-// }
+}
 
 // Renders questions to the screen once start button is clicked
 function render(questionList) {
@@ -197,6 +196,7 @@ function allDone() {
             var newScore = JSON.stringify(allScores);
             localStorage.setItem("allScores", newScore);
             console.log(allScores);
+            window.location.replace("highscore.html");
 
         }
     });
