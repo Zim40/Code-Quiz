@@ -156,21 +156,23 @@ function allDone() {
     if (initials === null) {
         alert("No value entered!");
     } else {
-         var finalScore = {
-            initials: initials,
-            score: timeRemaining,
+        var finalScore = {
+        initials: initials,
+        score: timeRemaining,
     };
     console.log(finalScore);
     var allScores = localStorage.getItem("allScores");
     if (allScores === null) {
         allScores = [];
         } else {
-            allScores = JSON.parse(allScores);
+        allScores = JSON.parse(allScores);
         }
-            allScores.push(finalScore);
-            var newScore = JSON.stringify(allScores);
-            localStorage.setItem("allScores", newScore);
+        allScores.push(finalScore);
+        var newScore = JSON.stringify(allScores);
+        localStorage.setItem("allScores", newScore);
+        console.log(finalScore);
     }
+    console.log(newScore);
 });
 
 
@@ -196,6 +198,7 @@ function allDone() {
             var newScore = JSON.stringify(allScores);
             localStorage.setItem("allScores", newScore);
             console.log(allScores);
+            
             window.location.replace("highscore.html");
 
         }
