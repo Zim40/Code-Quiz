@@ -93,4 +93,10 @@ li:hover {
     
 }
 
+/* HIGHSCORE HTML */
+
+#leaderBoard {
+    width:960px;
+    height:500px;
+}
 
