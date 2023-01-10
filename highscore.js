@@ -5,7 +5,7 @@ var scoreList = document.getElementById("#scoreList");
 
 // button returns you to quiz page 
 goBack.addEventListener("click", function () {
-    window.location.replace("Quiz.html");
+    window.location.replace("index.html");
 });
 
 
