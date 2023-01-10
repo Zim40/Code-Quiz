@@ -5,26 +5,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" src="./Quiz.css">
+    <link rel="stylesheet" href="./highscore.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@200;400&display=swap" rel="stylesheet">
     <title>Highscores: Coding Quiz</title>
 </head>
 
 <body>
     <div id="title">
         <h1 id="Title">Highscores</h1>
+
+        <section div id="wrapper">
+            <div id="questionsDiv">
+                <h2>Leaderboard</h2>
+                <ol id="scoreList"></ol>
+            </div>
+            <div id="clearScore">
+                <button id="clear">Clear Score</button>
+                <button id="goBack">Go Back</button>
+            </div>
+        </section>
     </div>
-    <section div id="wrapper">
-        <div id="questionsDiv">
-            <h2>Leaderboard</h2>
-            <ol id="scoreList"></ol>
-        </div>
-        <div id="clearScore">
-            <button id="clear">Clear Score</button>
-            <button id="goBack">Go Back</button>
-        </div>
-        
-    </section>
-<script src="./highscore.js"></script>
+
+    <script src="./highscore.js"></script>
 
 </body>
 

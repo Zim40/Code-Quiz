@@ -6,7 +6,7 @@ body {
     color: black;
     box-sizing: border-box;
     background-color: grey;
-    font-family:  Tahoma, sans-serif;
+    font-family: 'Sofia Sans', sans-serif;
 }
 #Title {
     text-align: center;
@@ -19,6 +19,7 @@ p {
 }
 h2 {
     font-size:30px;
+    font-weight: 400;
 }
 h1#Coding-quiz {
     max-width: 1080px;
@@ -42,6 +43,7 @@ button {
     border-radius: 8px;
     font-size: 22px;
     background-color: grey;
+    font-family: 'Sofia Sans', sans-serif;
 }
 
 /* Questions */

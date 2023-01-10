@@ -34,7 +34,7 @@ var questionsDiv = document.querySelector("#questionsDiv");
 // Timer
 var secondsLeft = 50;
 var holdInterval = 0;
-var penalty = 5;
+var penalty = 15;
 var ulCreate = document.querySelector("ul");
 
 timer.addEventListener("click", function () {
@@ -151,10 +151,14 @@ function allDone() {
     createSubmit.textContent = "Submit";
     questionsDiv.appendChild(createSubmit);
 
-    createSubmit.addEventListener("click", function () {
+    createSubmit.addEventListener("click", function (scoreIn) {
         var initials = createInput.value;
-        if (initials === null) {
+        if (initials == false) {
+
             alert("No value entered!");
+            scoreIn();
+
+            
         } else {
             var finalScore = {
                 initials: initials,

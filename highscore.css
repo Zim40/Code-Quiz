@@ -1,0 +1,41 @@
+:root{
+    --aquaBackg: aquamarine;
+    --grey: grey;
+}
+body {
+    background: var(--grey);
+    max-width:980px;
+    margin: auto;
+
+}
+#title {
+    text-align: center;
+    font-family: 'Sofia Sans', sans-serif;
+
+}
+#wrapper {
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+    padding: 15px;
+    text-align:center;
+    background: var(--aquaBackg);
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgb(0 0 0 / 50%), 10px 10px 15px rgb(0 0 0 / 50%), -1px -1px 30px rgb(0 0 0 / 20%);
+    margin: 10px;
+}
+#Title {
+    max-width: 1080px;
+    background: aquamarine;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgb(0 0 0 / 50%), 10px 10px 15px rgb(0 0 0 / 50%), -1px -1px 30px rgb(0 0 0 / 20%);
+    padding: 21px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+    font-size: 50px;
+}
+li {
+    font-weight:400;
+
+}
