@@ -42,9 +42,6 @@ if (allScores) {
 
 
 }
-console.log(allScores);
-goBack.addEventListener("click", function () {
-    window.location.replace("Quiz.html");
-});
+
 
 
