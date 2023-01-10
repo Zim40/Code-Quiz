@@ -20,3 +20,10 @@ var createLi = document.createElement("li");
 ## Known issues
  <li>Adds two scores when submitting initials in Highscores</li>
  <li>reset button not functional</li>
+
+# Licence
+MIT Licence.
+
+Live page link: 
+!["Code-Quiz"](./images/1673336778516.png)
+
