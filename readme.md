@@ -24,6 +24,9 @@ var createLi = document.createElement("li");
 # Licence
 MIT Licence.
 
-Live page link: 
+# Link
+Live page link: https://zim40.github.io/Code-Quiz/
+
+
 !["Code-Quiz"](./images/1673336778516.png)
 
