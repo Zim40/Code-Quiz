@@ -1,7 +1,7 @@
 var clearScore = document.querySelector("#clear");
 var goBack = document.querySelector("#goBack");
 var scoreList = document.getElementById("#scoreList");
-var clearLi = document.getElementById("#scoreList");
+
 
 // button returns you to quiz page 
 goBack.addEventListener("click", function () {
@@ -9,11 +9,13 @@ goBack.addEventListener("click", function () {
 });
 
 
-// function clearList() {
-//     clearLi.addEventListener("click",)
-//     var myList = document.getElementById("scoreList");
-//     myList.innerHTML = '';
-// }
+// Clears leaderboard
+clearScore.addEventListener("click", function () {
+    var myList = document.getElementById("scoreList");
+    myList.innerHTML = '';
+});
+
+
 
 
 
